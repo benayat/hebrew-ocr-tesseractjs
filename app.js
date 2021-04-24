@@ -12,5 +12,13 @@ const worker = createWorker({
     data: { text },
   } = await worker.recognize('../../../Pictures/ocr/Capture.PNG');
   console.log(text);
+  let array = text.split(' ');
+  console.log(array);
+  for (let word of array) {
+    console.log(word.split('').reverse().join(''));
+  }
+  const tostring = array.join(' ');
+  console.log(tostring);
+
   await worker.terminate();
 })();
